@@ -64,14 +64,14 @@ public class USARCode extends OpMode {
 
         //raising arm in unfolded state
         if (gamepad1.left_bumper && folded == 0){     //raise
-            shoulder -= 0.01;
+            shoulder -= 0.0025;
 
             shoulder = clamp(shoulder, 0.44, 1);
         }
-		
-		
+        
+        
         if (gamepad1.left_trigger > 0.25 && folded == 0){     //lower
-            shoulder += 0.01;
+            shoulder += 0.0025;
 
             shoulder = clamp(shoulder, 0.44, 1);
         }
@@ -92,23 +92,23 @@ public class USARCode extends OpMode {
 
         //folded states
         if (folded == 0){
-            appleSauce.setWristPos(mapRange(shoulder, 0.44, 1, 0.45, 0.95));
+            appleSauce.setWristPos(mapRange(shoulder, 0.44, 1, 0.45, 0.97));
             appleSauce.setTheClaw(shoulder);
             appleSauce.setTheThingy(1.44 - shoulder);
         }
 
         if (folded == 1){
-            appleSauce.setWristPos(0.45);
+            appleSauce.setWristPos(0.25);
             appleSauce.setTheClaw(0.44);
             appleSauce.setTheThingy(1);
-			shoulder = 0.44;
+		shoulder = 0.44;
         }
 
         if (folded == 3){
             appleSauce.setWristPos(0.45);
             appleSauce.setTheClaw(0.44);
             appleSauce.setTheThingy(1);
-			shoulder = 0.44;
+		shoulder = 0.44;
         }
     }
 
@@ -120,8 +120,8 @@ public class USARCode extends OpMode {
         if (value > maxValue) return maxValue;
         else return value;
     }
-	
-	public double mapRange(double value, double inMin, double inMax, double outMin, double outMax){
-		return ((value - inMin) * (outMax - outMin) / (inMax - inMin)) + outMin;
+    
+    public double mapRange(double value, double inMin, double inMax, double outMin, double outMax){
+        return ((value - inMin) * (outMax - outMin) / (inMax - inMin)) + outMin;
 }
 }
