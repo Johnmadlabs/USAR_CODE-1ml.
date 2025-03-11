@@ -98,17 +98,17 @@ public class USARCode extends OpMode {
         }
 
         if (folded == 1){
-            appleSauce.setWristPos(0.25);
+            appleSauce.setWristPos(0.18);
             appleSauce.setTheClaw(0.44);
             appleSauce.setTheThingy(1);
-		shoulder = 0.44;
+            shoulder = 0.44;
         }
 
         if (folded == 3){
             appleSauce.setWristPos(0.45);
             appleSauce.setTheClaw(0.44);
             appleSauce.setTheThingy(1);
-		shoulder = 0.44;
+            shoulder = 0.44;
         }
     }
 
